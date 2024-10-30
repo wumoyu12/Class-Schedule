@@ -12,7 +12,7 @@
 			<p id="firstpart">
 				
 				<label id="lblSchool">School Name:</label>
-				<input type="text" id="txtschool" placeholder="School name" autofocus></input>
+				<input type="text" id="txtschool" placeholder="School name" autofocus></input><br>
 				
 				<label id="lblfirstname">First Name:</label>
 				<input type="text" id="txtfirstname" placeholder="First name" autofocus></input><br>
