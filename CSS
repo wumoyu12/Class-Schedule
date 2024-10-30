@@ -39,3 +39,23 @@ input[id="txtcounselor"]
 {
 	margin-left: 45px;
 }
+
+input[id="txtclass"]
+{
+	margin-left: 8px;
+}
+
+input[id="txtteacher"]
+{
+	margin-left: 3px;
+}
+
+input[id="txtstart"]
+{
+	margin-left: 28px;
+}
+
+input[id="txtend"]
+{
+	margin-left: 33px;
+}
