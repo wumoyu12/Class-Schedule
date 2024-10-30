@@ -8,8 +8,8 @@
 		</head>
 		
 		<body>
+			<h1 id="studentinfo">Student Basic Information</h1>
 			<p id="firstpart">
-				<h1 id="studentinfo">Student Basic Information</h1>
 				
 				<label id="lblfirstname">First Name:</label>
 				<input type="text" id="txtfirstname" placeholder="First Name" autofocus></input><br>
@@ -20,10 +20,9 @@
 				<label id="lblID">ID Number: </label>
 				<input type="text" id="txtID" placeholder="ID Number" autofocus></input><br>
 			</p>
-			</p>
 			
+			<h2 id="classinfo">First Period Information</h2>
 			<p id="secondpart">
-				<h2 id="classinfo">First Period Information</h2>
 				
 				<label id="lblclass">Course Name:</label>
 				<input type="text" id="txtclass" placeholder="Course name" autofocus></input><br>
