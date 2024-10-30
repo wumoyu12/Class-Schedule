@@ -11,14 +11,27 @@
 			<h1 id="studentinfo">Student Basic Information</h1>
 			<p id="firstpart">
 				
+				<label id="lblSchool">School Name:</label>
+				<input type="text" id="txtschool" placeholder="School name" autofocus></input>
+				
 				<label id="lblfirstname">First Name:</label>
-				<input type="text" id="txtfirstname" placeholder="First Name" autofocus></input><br>
+				<input type="text" id="txtfirstname" placeholder="First name" autofocus></input><br>
 				
 				<label id="lblfirstname">Last Name:</label>
-				<input type="text" id="txtfirstname" placeholder="Last Name" autofocus></input><br>
+				<input type="text" id="txtfirstname" placeholder="Last name" autofocus></input><br>
 				
 				<label id="lblID">ID Number: </label>
-				<input type="text" id="txtID" placeholder="ID Number" autofocus></input><br>
+				<input type="text" id="txtID" placeholder="ID number" autofocus></input><br>
+				
+				<label id="lblgrade">Grade Level:</label>
+				<input type="text" id="txtgrade" placeholder="Grade level" autofocus></input><br>
+				
+				<label id="lblcounselor">Counselor:</label>
+				<input type="text" id="txtcounselor" placeholder="Counselor name" autofocus></input><br>
+				
+				<label id="lbloffice">Counselor Office:</label>
+				<input type="text" id="txtoffice" placeholder="Room number" autofocus></input>
+				
 			</p>
 			
 			<h2 id="classinfo">First Period Information</h2>
@@ -28,16 +41,16 @@
 				<input type="text" id="txtclass" placeholder="Course name" autofocus></input><br>
 				
 				<label id="lblroom">Room Number:</label>
-				<input type="text" id="txtroom" placeholder="Room Number" autofocus></input><br>
+				<input type="text" id="txtroom" placeholder="Room number" autofocus></input><br>
 				
 				<label id="lblclass">Teacher Name:</label>
 				<input type="text" id="txtclass" placeholder="Teacher name" autofocus></input><br>
 				
 				<label id="lblstart">Start Time:</label>
-				<input type="text" id="txtstart" placeholder="Start Time" autofocus></input><br>
+				<input type="text" id="txtstart" placeholder="Start time" autofocus></input><br>
 				
 				<label id="lblend">End Time:</label>
-				<input type="text" id="txtstart" placeholder="End Time" autofocus></input><br>
+				<input type="text" id="txtstart" placeholder="End time" autofocus></input><br>
 				
 				<button type="button" id="btnsubmit">Submit</button>
 			</p>
