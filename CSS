@@ -59,3 +59,13 @@ input[id="txtend"]
 {
 	margin-left: 33px;
 }
+
+input[id="txtschool"]
+{
+	width:150px;
+}
+
+input[id="txtfirstname"], input[id="txtlastname"], input[id="txtcounselor"]
+{
+	width:100px;
+}
