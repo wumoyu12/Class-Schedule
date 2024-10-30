@@ -43,14 +43,14 @@
 				<label id="lblroom">Room Number:</label>
 				<input type="text" id="txtroom" placeholder="Room number" autofocus></input><br>
 				
-				<label id="lblclass">Teacher Name:</label>
-				<input type="text" id="txtclass" placeholder="Teacher name" autofocus></input><br>
+				<label id="lblteacher">Teacher Name:</label>
+				<input type="text" id="txtteacher" placeholder="Teacher name" autofocus></input><br>
 				
 				<label id="lblstart">Start Time:</label>
 				<input type="text" id="txtstart" placeholder="Start time" autofocus></input><br>
 				
 				<label id="lblend">End Time:</label>
-				<input type="text" id="txtstart" placeholder="End time" autofocus></input><br>
+				<input type="text" id="txtend" placeholder="End time" autofocus></input><br>
 				
 				<button type="button" id="btnsubmit">Submit</button>
 			</p>
