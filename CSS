@@ -1,0 +1,41 @@
+h1, h2
+{
+	background-color:gray;
+	color:white;
+}
+
+body
+{
+	background-color:gray;
+	color:black;
+}
+
+input[id="txtschool"]
+{
+	margin-left: 24px;
+}
+
+input[id="txtfirstname"]
+{
+	margin-left: 39px;
+}
+
+input[id="txtlastname"]
+{
+	margin-left: 41px;
+}
+
+input[id="txtid"]
+{
+	margin-left: 37px;
+}
+
+input[id="txtgrade"]
+{
+	margin-left: 31px;
+}
+
+input[id="txtcounselor"]
+{
+	margin-left: 45px;
+}
