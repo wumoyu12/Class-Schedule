@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+	<html>
+		<head>
+		
+			<title>Activity-Class Schedule</title>
+			<link rel="stylesheet" type="text/css" href="customize.css"></link>
+			<script src="ClassSchedule.js"></script>
+		</head>
+		
+		<body>
+			<p id="firstpart">
+				<h1 id="studentinfo">Student Basic Information</h1>
+				
+				<label id="lblfirstname">First Name:</label>
+				<input type="text" id="txtfirstname" placeholder="First Name" autofocus></input><br>
+				
+				<label id="lblfirstname">Last Name:</label>
+				<input type="text" id="txtfirstname" placeholder="Last Name" autofocus></input><br>
+				
+				<label id="lblID">ID Number: </label>
+				<input type="text" id="txtID" placeholder="ID Number" autofocus></input><br>
+			</p>
+			</p>
+			
+			<p id="secondpart">
+				<h2 id="classinfo">First Period Information</h2>
+				
+				<label id="lblclass">Course Name:</label>
+				<input type="text" id="txtclass" placeholder="Course name" autofocus></input><br>
+				
+				<label id="lblroom">Room Number:</label>
+				<input type="text" id="txtroom" placeholder="Room Number" autofocus></input><br>
+				
+				<label id="lblclass">Teacher Name:</label>
+				<input type="text" id="txtclass" placeholder="Teacher name" autofocus></input><br>
+				
+				<label id="lblstart">Start Time:</label>
+				<input type="text" id="txtstart" placeholder="Start Time" autofocus></input><br>
+				
+				<label id="lblend">End Time:</label>
+				<input type="text" id="txtstart" placeholder="End Time" autofocus></input><br>
+				
+				<button type="button" id="btnsubmit">Submit</button>
+			</p>
+		</body>
+		
+			<a href="schedule.html">
+				<button type="button" id="btnschedule">Schedule</button>
+			</a>
+		
+	</html>
