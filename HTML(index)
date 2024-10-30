@@ -17,11 +17,11 @@
 				<label id="lblfirstname">First Name:</label>
 				<input type="text" id="txtfirstname" placeholder="First name" autofocus></input><br>
 				
-				<label id="lblfirstname">Last Name:</label>
-				<input type="text" id="txtfirstname" placeholder="Last name" autofocus></input><br>
+				<label id="lbllastname">Last Name:</label>
+				<input type="text" id="txtlastname" placeholder="Last name" autofocus></input><br>
 				
-				<label id="lblID">ID Number: </label>
-				<input type="text" id="txtID" placeholder="ID number" autofocus></input><br>
+				<label id="lblid">ID Number: </label>
+				<input type="text" id="txtid" placeholder="ID number" autofocus></input><br>
 				
 				<label id="lblgrade">Grade Level:</label>
 				<input type="text" id="txtgrade" placeholder="Grade level" autofocus></input><br>
