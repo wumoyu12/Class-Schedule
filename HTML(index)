@@ -11,45 +11,47 @@
 			<h1 id="studentinfo">Student Basic Information</h1>
 			<p id="firstpart">
 				
-				<label id="lblSchool">School Name:</label>
+				<label id="lblSchool">School Name:</label><br>
 				<input type="text" id="txtschool" placeholder="School name" autofocus></input><br>
 				
-				<label id="lblfirstname">First Name:</label>
+				<label id="lblfirstname">First Name:</label><br>
 				<input type="text" id="txtfirstname" placeholder="First name" autofocus></input><br>
 				
-				<label id="lbllastname">Last Name:</label>
+				<label id="lbllastname">Last Name:</label><br>
 				<input type="text" id="txtlastname" placeholder="Last name" autofocus></input><br>
 				
-				<label id="lblid">ID Number: </label>
+				<label id="lblid">ID Number: </label><br>
 				<input type="text" id="txtid" placeholder="ID number" autofocus></input><br>
 				
-				<label id="lblgrade">Grade Level:</label>
+				<label id="lblgrade">Grade Level:</label><br>
 				<input type="text" id="txtgrade" placeholder="Grade level" autofocus></input><br>
 				
-				<label id="lblcounselor">Counselor:</label>
+				<label id="lblcounselor">Counselor:</label><br>
 				<input type="text" id="txtcounselor" placeholder="Counselor name" autofocus></input><br>
 				
-				<label id="lbloffice">Counselor Office:</label>
+				<label id="lbloffice">Counselor Office:</label><br>
 				<input type="text" id="txtoffice" placeholder="Room number" autofocus></input>
+				
+				<button type="button" id="btnnext">Submit</button>
 				
 			</p>
 			
 			<h2 id="classinfo">Class Information</h2>
 			<p id="secondpart">
 				
-				<label id="lblclass">Course Name:</label>
+				<label id="lblclass">Course Name:</label><br>
 				<input type="text" id="txtclass" placeholder="Course name" autofocus></input><br>
 				
-				<label id="lblroom">Room Number:</label>
+				<label id="lblroom">Room Number:</label><br>
 				<input type="text" id="txtroom" placeholder="Room number" autofocus></input><br>
 				
-				<label id="lblteacher">Teacher Name:</label>
+				<label id="lblteacher">Teacher Name:</label><br>
 				<input type="text" id="txtteacher" placeholder="Teacher name" autofocus></input><br>
 				
-				<label id="lblstart">Start Time:</label>
+				<label id="lblstart">Start Time:</label><br>
 				<input type="text" id="txtstart" placeholder="Start time" autofocus></input><br>
 				
-				<label id="lblend">End Time:</label>
+				<label id="lblend">End Time:</label><br>
 				<input type="text" id="txtend" placeholder="End time" autofocus></input><br>
 				
 				<button type="button" id="btnsubmit">Submit</button>
