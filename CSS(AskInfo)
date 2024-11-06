@@ -1,0 +1,11 @@
+h1, h2
+{
+	background-color:gray;
+	color:white;
+}
+
+body
+{
+	background-color:gray;
+	color:black;
+}
