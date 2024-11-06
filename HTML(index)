@@ -8,8 +8,8 @@
 		</head>
 		
 		<body>
-			<h1 id="studentinfo">Student Basic Information</h1>
-			<p id="firstpart">
+			<h1 id="studentinfo">Student Information</h1>
+			<div id="firstpart">
 				
 				<label id="lblSchool">School Name:</label><br>
 				<input type="text" id="txtschool" placeholder="School name" autofocus></input><br>
@@ -30,14 +30,14 @@
 				<input type="text" id="txtcounselor" placeholder="Counselor name" autofocus></input><br>
 				
 				<label id="lbloffice">Counselor Office:</label><br>
-				<input type="text" id="txtoffice" placeholder="Room number" autofocus></input>
+				<input type="text" id="txtoffice" placeholder="Room number" autofocus></input><br>
 				
 				<button type="button" id="btnnext">Submit</button>
 				
-			</p>
+			</div>
 			
 			<h2 id="classinfo">Class Information</h2>
-			<p id="secondpart">
+			<div id="secondpart">
 				
 				<label id="lblclass">Course Name:</label><br>
 				<input type="text" id="txtclass" placeholder="Course name" autofocus></input><br>
@@ -55,7 +55,7 @@
 				<input type="text" id="txtend" placeholder="End time" autofocus></input><br>
 				
 				<button type="button" id="btnsubmit">Submit</button>
-			</p>
+			</div>
 		</body>
 		
 			<a href="schedule.html">
