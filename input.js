@@ -12,14 +12,16 @@ function Next()
 
 function GetInfo()
 {
-	School = document.getElementById("txtschool").value;
-	FirstName = document.getElementById("txtfirstname").value;
-	LastName = document.getElementById("txtlastname").value;
-	IDNumber = document.getElementById("txtid").value;
-	Grade = document.getElementById("txtgrade").value;
-	Counselor = document.getElementById("txtcounselor").value;
-	Office = document.getElementById("txtoffice").value;
-	CheckInfo();
+	school = document.getElementById("txtschool").value;
+	firstname = document.getElementById("txtfirstname").value;
+	lastname = document.getElementById("txtlastname").value;
+	idnum = document.getElementById("txtid").value;
+	grade = document.getElementById("txtgrade").value;
+	officeclass = document.getElementById("txtofficeclass").value;
+	counselor = document.getElementById("txtcounselor").value;
+	office = document.getElementById("txtoffice").value;
+	
+	CheckInfo()
 }
 
 function CheckInfo()
