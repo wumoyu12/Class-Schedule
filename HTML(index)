@@ -31,7 +31,7 @@
 						
 					<tr> 
 						<td><label id="lblid">ID Number: </label></td>
-						<td><input type="text" id="txtid" placeholder="ID number" autofocus></input></td>
+						<td><input type="text" id="txtid" placeholder="OSIS Number" autofocus></input></td>
 					</tr>
 						
 					<tr> 
@@ -57,7 +57,7 @@
 					
 				</table>
 				
-				<button type="button" id="btnnext">Submit</button>
+				<button type="button" id="btnnext">Next</button>
 				
 			</div>
 			
