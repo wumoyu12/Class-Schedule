@@ -8,29 +8,44 @@
 		</head>
 		
 		<body>
-			<h1 id="studentinfo">Student Information</h1>
+			<h1>Student Information</h1>
 			<div id="firstpart">
-				
-				<label id="lblSchool">School Name:</label><br>
-				<input type="text" id="txtschool" placeholder="School name" autofocus></input><br>
-				
-				<label id="lblfirstname">First Name:</label><br>
-				<input type="text" id="txtfirstname" placeholder="First name" autofocus></input><br>
-				
-				<label id="lbllastname">Last Name:</label><br>
-				<input type="text" id="txtlastname" placeholder="Last name" autofocus></input><br>
-				
-				<label id="lblid">ID Number: </label><br>
-				<input type="text" id="txtid" placeholder="ID number" autofocus></input><br>
-				
-				<label id="lblgrade">Grade Level:</label><br>
-				<input type="text" id="txtgrade" placeholder="Grade level" autofocus></input><br>
-				
-				<label id="lblcounselor">Counselor:</label><br>
-				<input type="text" id="txtcounselor" placeholder="Counselor name" autofocus></input><br>
-				
-				<label id="lbloffice">Counselor Office:</label><br>
-				<input type="text" id="txtoffice" placeholder="Room number" autofocus></input><br>
+			<table>
+					<tr> 
+						<td><label id="lblSchool">School Name:</label></td>
+						<td><input type="text" id="txtschool" placeholder="School name" autofocus></input></td>
+					</tr>
+					
+					<tr> 
+						<td><label id="lblfirstname">First Name:</label></td>
+						<td><input type="text" id="txtfirstname" placeholder="First name" autofocus></input></td>
+					</tr>
+						
+					<tr> 
+						<td><label id="lbllastname">Last Name:</label></td>
+						<td><input type="text" id="txtlastname" placeholder="Last name" autofocus></input></td>
+					</tr>
+						
+					<tr> 
+						<td><label id="lblid">ID Number: </label></td>
+						<td><input type="text" id="txtid" placeholder="ID number" autofocus></input></td>
+					</tr>
+						
+					<tr> 
+						<td><label id="lblgrade">Grade Level:</label></td>
+						<td><input type="text" id="txtgrade" placeholder="Grade level" autofocus></input></td>
+					</tr>
+					
+					<tr> 
+						<td><label id="lblcounselor">Counselor:</label></td>
+						<td><input type="text" id="txtcounselor" placeholder="Counselor name" autofocus></input></td>
+					</tr>
+					
+					<tr> 
+						<td><label id="lbloffice">Counselor Office:</label></td>
+						<td><input type="text" id="txtoffice" placeholder="Room number" autofocus></input></td>
+					</tr>
+				</table>
 				
 				<button type="button" id="btnnext">Submit</button>
 				
@@ -39,19 +54,19 @@
 			<h2 id="classinfo">Class Information</h2>
 			<div id="secondpart">
 				
-				<label id="lblclass">Course Name:</label><br>
+				<label id="lblclass">Course Name:</label>
 				<input type="text" id="txtclass" placeholder="Course name" autofocus></input><br>
 				
-				<label id="lblroom">Room Number:</label><br>
+				<label id="lblroom">Room Number:</label>
 				<input type="text" id="txtroom" placeholder="Room number" autofocus></input><br>
 				
-				<label id="lblteacher">Teacher Name:</label><br>
+				<label id="lblteacher">Teacher Name:</label>
 				<input type="text" id="txtteacher" placeholder="Teacher name" autofocus></input><br>
 				
-				<label id="lblstart">Start Time:</label><br>
+				<label id="lblstart">Start Time:</label>
 				<input type="text" id="txtstart" placeholder="Start time" autofocus></input><br>
 				
-				<label id="lblend">End Time:</label><br>
+				<label id="lblend">End Time:</label>
 				<input type="text" id="txtend" placeholder="End time" autofocus></input><br>
 				
 				<button type="button" id="btnsubmit">Submit</button>
