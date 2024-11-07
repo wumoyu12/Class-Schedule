@@ -8,9 +8,16 @@
 		</head>
 		
 		<body>
-			<h1>Student Information</h1>
 			<div id="firstpart">
 			<table>
+					<tr>
+						<th>Student Information</th>
+					</tr>
+					
+					<tr>
+						<td>Welcome to schedule maker</td>
+					</tr>
+					
 					<tr> 
 						<td><label id="lblSchool">School Name:</label></td>
 						<td><input type="text" id="txtschool" placeholder="School name" autofocus></input></td>
@@ -37,6 +44,11 @@
 					</tr>
 					
 					<tr> 
+						<td><label id="lblofficeclass">Office Class:</label></td>
+						<td><input type="text" id="txtofficeclass" placeholder="Office Class" autofocus></input></td>
+					</tr>
+					
+					<tr> 
 						<td><label id="lblcounselor">Counselor:</label></td>
 						<td><input type="text" id="txtcounselor" placeholder="Counselor name" autofocus></input></td>
 					</tr>
@@ -45,6 +57,8 @@
 						<td><label id="lbloffice">Counselor Office:</label></td>
 						<td><input type="text" id="txtoffice" placeholder="Room number" autofocus></input></td>
 					</tr>
+					
+					
 				</table>
 				
 				<button type="button" id="btnnext">Submit</button>
@@ -53,24 +67,38 @@
 			
 			<h2 id="classinfo">Class Information</h2>
 			<div id="secondpart">
+			<table>
+				<tr>
+					<td><label id="lblclass">Course Name:</label></td>
+					<td><input type="text" id="txtclass" placeholder="Course name" autofocus></input></td>
+				</tr>
 				
-				<label id="lblclass">Course Name:</label>
-				<input type="text" id="txtclass" placeholder="Course name" autofocus></input><br>
+				<tr>
+					<td><label id="lblroom">Room Number:</label></td>
+					<td><input type="text" id="txtroom" placeholder="Room number" autofocus></input></td>
+				</tr>
 				
-				<label id="lblroom">Room Number:</label>
-				<input type="text" id="txtroom" placeholder="Room number" autofocus></input><br>
+				<tr>
+					<td><label id="lblteacher">Teacher Name:</label></td>
+					<td><input type="text" id="txtteacher" placeholder="Teacher name" autofocus></input></td>
+				</tr>
 				
-				<label id="lblteacher">Teacher Name:</label>
-				<input type="text" id="txtteacher" placeholder="Teacher name" autofocus></input><br>
+				<tr>
+					<td><label id="lblstart">Start Time:</label>></td>
+					<td><input type="text" id="txtstart" placeholder="Start time" autofocus></input></td>
+				</tr>
+					
+				<tr>
+					<td><label id="lblend">End Time:</label></td>
+					<td><input type="text" id="txtend" placeholder="End time" autofocus></input></td>
+				</tr>
 				
-				<label id="lblstart">Start Time:</label>
-				<input type="text" id="txtstart" placeholder="Start time" autofocus></input><br>
-				
-				<label id="lblend">End Time:</label>
-				<input type="text" id="txtend" placeholder="End time" autofocus></input><br>
+			</table>
 				
 				<button type="button" id="btnsubmit">Submit</button>
+				
 			</div>
+			
 		</body>
 		
 			<a href="schedule.html">
