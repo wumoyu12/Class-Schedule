@@ -4,19 +4,15 @@
 		
 			<title>Activity-Class Schedule</title>
 			<link rel="stylesheet" type="text/css" href="customize.css"></link>
-			<script src="ClassSchedule.js"></script>
+			<script src="input.js"></script>
 		</head>
 		
 		<body>
+		
 			<div id="firstpart">
+			<h1>Student Information</h1>
 			<table>
-					<tr>
-						<th>Student Information</th>
-					</tr>
-					
-					<tr>
-						<td>Welcome to schedule maker</td>
-					</tr>
+
 					
 					<tr> 
 						<td><label id="lblSchool">School Name:</label></td>
