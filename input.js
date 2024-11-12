@@ -1,13 +1,18 @@
 window.addEventListener("load", addListener);
-
+var school, firstname, lastname, idnum, grade, officeclass, counselor, office, course, room, teacher, start, end;
 function addListener() 
 {
+	document.getElementById("firstpart").style.display = "block";
+	document.getElementById("secondpart").style.display = "none";
+	document.getElementById("lastpart").style.display = "none";
 	document.getElementById("btnnext").addEventListener("click",Next);
+	document.getElementById("btnnext").addEventListener("click",Submit);
 }
 
 function Next()
 {
 	GetInfo()
+	Schedule()
 }
 
 function GetInfo()
@@ -20,11 +25,68 @@ function GetInfo()
 	officeclass = document.getElementById("txtofficeclass").value;
 	counselor = document.getElementById("txtcounselor").value;
 	office = document.getElementById("txtoffice").value;
+	CheckSInfo()
 	
-	CheckInfo()
 }
 
-function CheckInfo()
+function CheckSInfo()
 {
+	if (!school || !firstname || !lastname || !idnum || !grade || !officeclass || !counselor || !office)
+	{
+	    alert("Please fill out all the basic information fields before proceeding.");
+	    return;
+	}
+	else
+	{
+		StoreInfo()
+	}
+}
+function StoreInfo()
+{
+	localStorage.setItem("school", school);
+	localStorage.setItem("firstname", firstname);
+	localStorage.setItem("lastname", lastname);
+	localStorage.setItem("idnum", idnum);
+	localStorage.setItem("grade", grade);
+	localStorage.setItem("officeclass", officeclass);
+	localStorage.setItem("counselor", counselor);
+	localStorage.setItem("office", office);
 	
+	alert(office)
+	
+	document.getElementById("firstpart").style.display = "none";
+	document.getElementById("secondpart").style.display = "block";
+}
+
+function Submit()
+{
+	course = document.getElementById("txtclass").value;
+	room = document.getElementById("txtroom").value;
+	teacher = document.getElementById("txtteacher").value;
+	start = document.getElementById("txtstart").value;
+	end = document.getElementById("txtend").value;
+	CheckCInfo()
+}
+
+function CheckCInfo()
+{
+	if (!course || !room || !teacher || !start || !end)
+	{
+		alert("Please fill out all the class information fields before submitting.");
+		return;
+	}
+	else
+	{
+		StoreClass()
+	}
+}
+
+function StoreClass()
+{
+	localStorage.setItem("course", course);
+	localStorage.setItem("room", room);
+	localStorage.setItem("teacher", teacher);
+	localStorage.setItem("start", start);
+	localStorage.setItem("end", end);
+	document.getElementById("lastpart").style.display = "none";
 }
