@@ -6,7 +6,7 @@ function addListener()
 	document.getElementById("secondpart").style.display = "none";
 	document.getElementById("lastpart").style.display = "none";
 	document.getElementById("btnnext").addEventListener("click",Next);
-	document.getElementById("btnnext").addEventListener("click",Submit);
+	document.getElementById("btnsubmit").addEventListener("click",Submit);
 }
 
 function Next()
@@ -31,7 +31,7 @@ function GetInfo()
 
 function CheckSInfo()
 {
-	if (!school || !firstname || !lastname || !idnum || !grade || !officeclass || !counselor || !office)
+	if (school == "" || firstname == "" || lastname == "" || idnum == "" || grade == "" || officeclass == "" || counselor =="" || office == "")
 	{
 	    alert("Please fill out all the basic information fields before proceeding.");
 	    return;
@@ -52,8 +52,6 @@ function StoreInfo()
 	localStorage.setItem("counselor", counselor);
 	localStorage.setItem("office", office);
 	
-	alert(office)
-	
 	document.getElementById("firstpart").style.display = "none";
 	document.getElementById("secondpart").style.display = "block";
 }
@@ -70,14 +68,14 @@ function Submit()
 
 function CheckCInfo()
 {
-	if (!course || !room || !teacher || !start || !end)
+	if (course == "" || room == "" || teacher == "" || start == "" || end == "")
 	{
 		alert("Please fill out all the class information fields before submitting.");
 		return;
 	}
 	else
 	{
-		StoreClass()
+		StoreClass();
 	}
 }
 
@@ -88,5 +86,11 @@ function StoreClass()
 	localStorage.setItem("teacher", teacher);
 	localStorage.setItem("start", start);
 	localStorage.setItem("end", end);
-	document.getElementById("lastpart").style.display = "none";
+	DisplaySchedule()
 }
+
+function DisplaySchedule()
+{
+	document.getElementById("lastpart").style.display = "block";
+}
+
