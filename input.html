@@ -10,10 +10,12 @@
 		<body>
 		
 			<div id="firstpart">
-			<h1>Student Information</h1>
 			<table>
 
-					
+					<tr>
+						<th>Student Information</th>
+					</tr>
+
 					<tr> 
 						<td><label id="lblSchool">School Name:</label></td>
 						<td><input type="text" id="txtschool" placeholder="School name" autofocus></input></td>
@@ -61,9 +63,13 @@
 				
 			</div>
 			
-			<h2 id="classinfo">Class Information</h2>
 			<div id="secondpart">
 			<table>
+			
+				<tr>
+					<th>Class Information</th>
+				</tr>
+			
 				<tr>
 					<td><label id="lblclass">Course Name:</label></td>
 					<td><input type="text" id="txtclass" placeholder="Course name" autofocus></input></td>
@@ -80,7 +86,7 @@
 				</tr>
 				
 				<tr>
-					<td><label id="lblstart">Start Time:</label>></td>
+					<td><label id="lblstart">Start Time:</label></td>
 					<td><input type="text" id="txtstart" placeholder="Start time" autofocus></input></td>
 				</tr>
 					
@@ -95,10 +101,11 @@
 				
 			</div>
 			
+			<div id="lastpart">
+				<a href="schedule.html">
+					<button type="button" id="btnschedule">Schedule</button>
+				</a>
+			</div>		
 		</body>
-		
-			<a href="schedule.html">
-				<button type="button" id="btnschedule">Schedule</button>
-			</a>
 		
 	</html>
