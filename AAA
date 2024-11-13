@@ -1,3 +1,9 @@
 colspan
 rowspan
 create a line between welmsg and askinfo
+switch case to enter the period
+//After 8 course display two buttons 
+  add(up to 10)
+  display schedule
+
+if the user enter lunch, the they don't have to enter the teacher
