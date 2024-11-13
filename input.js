@@ -1,5 +1,5 @@
 window.addEventListener("load", addListener);
-var school, firstname, lastname, idnum, grade, officeclass, counselor, office, course, room, teacher, start, end;
+var school, firstname, lastname, idnum, grade, officeclass, counselor, office, course, room, teacher;
 function addListener() 
 {
 	document.getElementById("firstpart").style.display = "block";
@@ -61,14 +61,12 @@ function Submit()
 	course = document.getElementById("txtclass").value;
 	room = document.getElementById("txtroom").value;
 	teacher = document.getElementById("txtteacher").value;
-	start = document.getElementById("txtstart").value;
-	end = document.getElementById("txtend").value;
 	CheckCInfo()
 }
 
 function CheckCInfo()
 {
-	if (course == "" || room == "" || teacher == "" || start == "" || end == "")
+	if (course == "" || room == "" || teacher == "")
 	{
 		alert("Please fill out all the class information fields before submitting.");
 		return;
@@ -84,8 +82,6 @@ function StoreClass()
 	localStorage.setItem("course", course);
 	localStorage.setItem("room", room);
 	localStorage.setItem("teacher", teacher);
-	localStorage.setItem("start", start);
-	localStorage.setItem("end", end);
 	DisplaySchedule()
 }
 
@@ -93,4 +89,3 @@ function DisplaySchedule()
 {
 	document.getElementById("lastpart").style.display = "block";
 }
-
