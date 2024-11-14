@@ -21,26 +21,38 @@ function GetInfo()
 	firstname = document.getElementById("txtfirstname").value;
 	lastname = document.getElementById("txtlastname").value;
 	idnum = document.getElementById("txtid").value;
+	idlength = idnum.length
 	grade = document.getElementById("txtgrade").value;
 	officeclass = document.getElementById("txtofficeclass").value;
 	counselor = document.getElementById("txtcounselor").value;
 	office = document.getElementById("txtoffice").value;
 	CheckSInfo()
-	
+	CheckId()
 }
 
 function CheckSInfo()
 {
-	if (school == "" || firstname == "" || lastname == "" || idnum == "" || grade == "" || officeclass == "" || counselor =="" || office == "")
+	if (school == "" || firstname == "" || lastname == "" || grade == "" || officeclass == "" || counselor =="" || office == "" || idnum == ""|| idlength != 9)
 	{
-	    alert("Please fill out all the basic information fields before proceeding.");
+	    alert("Please fill out all the basic information fields before proceeding. If alraedy enter all information, then you might enter the invild id number.");
 	    return;
 	}
+	
+	
+	else if((grade > 12 || grade < 9) && (parseFloat(grade) % 2 != 0))
+	{
+		alert("Your grade level should be 9-12, please try again.")
+		document.getElementById("txtgrade").value = "";
+		return;
+	}
+	
 	else
 	{
 		StoreInfo()
 	}
 }
+
+
 function StoreInfo()
 {
 	localStorage.setItem("school", school);
