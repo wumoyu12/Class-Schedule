@@ -1,5 +1,5 @@
 window.addEventListener("load", addListener);
-var school, firstname, lastname, idnum, idlength, grade, officeclass, counselor, office, period, course, room, teacher;
+var firstname, lastname, idnum, idlength, grade, officeclass, counselor, office, period, course, room, teacher;
 
 function addListener()
 {
@@ -7,7 +7,8 @@ function addListener()
 	document.getElementById("secondpart").style.display = "none";
 	document.getElementById("lastpart").style.display = "none";
 	document.getElementById("btnnext").addEventListener("click",Next);
-	document.getElementById("btnsubmit").addEventListener("click",Submit);
+	document.getElementById("btnsubmit").addEventListener("click",Submit)
+	document.getElementById("btnnoclass").addEventListener("click",Noclass);
 }
 
 function Next()
@@ -17,7 +18,6 @@ function Next()
 
 function GetInfo()
 {
-	school = document.getElementById("txtschool").value;
 	firstname = document.getElementById("txtfirstname").value;
 	lastname = document.getElementById("txtlastname").value;
 	idnum = document.getElementById("txtid").value;
@@ -32,7 +32,7 @@ function GetInfo()
 function CheckSInfo()
 {
 	
-	if (school == "" || firstname == "" || lastname == "" || grade == "" || officeclass == "" || counselor =="" || office == "" || idnum == ""|| idlength != 9)
+	if (firstname == "" || lastname == "" || grade == "" || officeclass == "" || counselor =="" || office == "" || idnum == ""|| idlength != 9)
 	{
 	    alert("Please fill out all the basic information fields before proceeding. If you alraedy enter all information, then you might enter the invild id number, it should be a  is a nine-digit number.");
 		document.getElementById("txtid").value = "";
@@ -53,7 +53,6 @@ function CheckSInfo()
 
 function StoreInfo()
 {
-	localStorage.setItem("school", school);
 	localStorage.setItem("firstname", firstname);
 	localStorage.setItem("lastname", lastname);
 	localStorage.setItem("idnum", idnum);
@@ -162,4 +161,9 @@ function StoreClass()
 function DisplaySchedule()
 {
 	document.getElementById("lastpart").style.display = "block";
+}
+
+function Noclass()
+{
+	alert("No Class");
 }
