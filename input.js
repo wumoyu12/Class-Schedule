@@ -1,6 +1,6 @@
 window.addEventListener("load", addListener);
-var school, firstname, lastname, idnum, grade, officeclass, counselor, office, course, room, teacher;
-function addListener() 
+var school, firstname, lastname, idnum, idlength, grade, officeclass, counselor, office, period, course, room, teacher;
+function addListener()
 {
 	document.getElementById("firstpart").style.display = "block";
 	document.getElementById("secondpart").style.display = "none";
@@ -89,7 +89,7 @@ function CheckCInfo()
 
 function Period()
 {
-	//use switch case to repeat the ask the class 
+	alert("")
 }
 
 function StoreClass()
