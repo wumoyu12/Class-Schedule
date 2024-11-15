@@ -67,6 +67,7 @@ function StoreInfo()
 
 function Submit()
 {
+	period = document.getElementById("txtperiod").value;
 	course = document.getElementById("txtclass").value;
 	room = document.getElementById("txtroom").value;
 	teacher = document.getElementById("txtteacher").value;
@@ -88,6 +89,7 @@ function CheckCInfo()
 
 function StoreClass()
 {
+	localStorage.setItem("period", period);
 	localStorage.setItem("course", course);
 	localStorage.setItem("room", room);
 	localStorage.setItem("teacher", teacher);
