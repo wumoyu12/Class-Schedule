@@ -1,6 +1,6 @@
 window.addEventListener("load", addListener);
 var school, firstname, lastname, idnum, idlength, grade, officeclass, counselor, office, period, course, room, teacher;
-var periodnum = 0;
+
 function addListener()
 {
 	document.getElementById("firstpart").style.display = "block";
@@ -13,7 +13,6 @@ function addListener()
 function Next()
 {
 	GetInfo()
-	Schedule()
 }
 
 function GetInfo()
@@ -36,7 +35,8 @@ function CheckSInfo()
 	if (school == "" || firstname == "" || lastname == "" || grade == "" || officeclass == "" || counselor =="" || office == "" || idnum == ""|| idlength != 9)
 	{
 	    alert("Please fill out all the basic information fields before proceeding. If you alraedy enter all information, then you might enter the invild id number, it should be a  is a nine-digit number.");
-	    return;
+		document.getElementById("txtid").value = "";
+		return;
 	}
 	if(grade > 12 || grade < 9 || parseFloat(grade) % 1 !=0)
 	{
@@ -51,115 +51,8 @@ function CheckSInfo()
 	}
 }
 
-function AskClassInfo()
-{
-	switch(periodnum)
-	{
-		case 0:
-			Period0();
-			break;
-			
-		case 1:
-			Period1();
-			break;
-			
-		case 2:
-			Period2();
-			break;
-			
-		case 3:
-			Period3();
-			break;
-			
-		case 4:
-			Period4();
-			break;
-			
-		case 5:
-			Period5();
-			break;
-
-		case 6:
-			Period6();
-			break;
-
-		case 7:
-			Period7();
-			break;
-
-		case 8:
-			Period8();
-			break;
-
-		case 9:
-			Period9();
-			break;
-
-		case 10:
-			Period10();
-			break;
-	}
-		
-}
-
-function Period0()
-{
-	alert("period")
-}
-
-function Period1()
-{
-	alert("period")
-}
-
-function Period2()
-{
-	alert("period")
-}
-
-function Period3()
-{
-	alert("period")
-}
-
-function Period4()
-{
-	alert("period")
-}
-
-function Period5()
-{
-	alert("period")
-}
-
-function Period6()
-{
-	alert("period")
-}
-
-function Period7()
-{
-	alert("period")
-}
-
-function Period8()
-{
-	alert("period")
-}
-
-function Period9()
-{
-	alert("period")
-}
-
-function Period10()
-{
-	alert("period")
-}
-
 function StoreInfo()
 {
-	periodnum = periodnum + 1;
 	localStorage.setItem("school", school);
 	localStorage.setItem("firstname", firstname);
 	localStorage.setItem("lastname", lastname);
@@ -171,6 +64,62 @@ function StoreInfo()
 	
 	document.getElementById("firstpart").style.display = "none";
 	document.getElementById("secondpart").style.display = "block";
+}
+
+function Period0()
+{
+	GetClassInfo();
+}
+
+function Period1()
+{
+	alert("1");
+	GetClassInfo();
+}
+
+function Period2()
+{
+	GetClassInfo();
+}
+
+function Period3()
+{
+	GetClassInfo();
+}
+
+function Period4()
+{
+	GetClassInfo();
+}
+
+function Period5()
+{
+	GetClassInfo();
+}
+
+function Period6()
+{
+	GetClassInfo();
+}
+
+function Period7()
+{
+	GetClassInfo();
+}
+
+function Period8()
+{
+	GetClassInfo();
+}
+
+function Period9()
+{
+	GetClassInfo();
+}
+
+function Period10()
+{
+	GetClassInfo();
 }
 
 function Submit()
