@@ -70,13 +70,14 @@ function Submit()
 	period = document.getElementById("txtperiod").value;
 	course = document.getElementById("txtclass").value;
 	room = document.getElementById("txtroom").value;
+	roomlength = room.length
 	teacher = document.getElementById("txtteacher").value;
 	CheckCInfo()
 }
 
 function CheckCInfo()
 {
-	if (course == "" || room == "" || teacher == "")
+	if (period = "" || course == "" || room == "" || teacher == "" || roomlength < 4)
 	{
 		alert("Please fill out all the class information fields before submitting.");
 		return;
