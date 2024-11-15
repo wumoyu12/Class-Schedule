@@ -27,7 +27,6 @@ function GetInfo()
 	counselor = document.getElementById("txtcounselor").value;
 	office = document.getElementById("txtoffice").value;
 	CheckSInfo()
-	CheckId()
 }
 
 function CheckSInfo()
@@ -38,7 +37,7 @@ function CheckSInfo()
 	    alert("Please fill out all the basic information fields before proceeding. If you alraedy enter all information, then you might enter the invild id number, it should be a  is a nine-digit number.");
 	    return;
 	}
-	if(grade > 12 || grade <= 8 || parseFloat(grade) % 2 !=0)
+	if(grade > 12 || grade < 9 || parseFloat(grade) % 1 !=0)
 	{
 		alert("Your grade level should be 9-12, please try again.")
 		document.getElementById("txtgrade").value = "";
@@ -50,7 +49,6 @@ function CheckSInfo()
 		StoreInfo()
 	}
 }
-
 
 function StoreInfo()
 {
