@@ -70,22 +70,26 @@ function Submit()
 	period = document.getElementById("txtperiod").value;
 	course = document.getElementById("txtclass").value;
 	room = document.getElementById("txtroom").value;
-	roomlength = room.length
 	teacher = document.getElementById("txtteacher").value;
 	CheckCInfo()
 }
 
 function CheckCInfo()
 {
-	if (period = "" || course == "" || room == "" || teacher == "" || roomlength < 4)
+	if (period = "" || course == "" || room == "" || teacher == "")
 	{
 		alert("Please fill out all the class information fields before submitting.");
 		return;
 	}
 	else
 	{
-		StoreClass();
+		Period()
 	}
+}
+
+function Period()
+{
+	//use switch case to repeat the ask the class 
 }
 
 function StoreClass()
