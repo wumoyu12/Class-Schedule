@@ -64,11 +64,6 @@ function StoreInfo()
 	document.getElementById("secondpart").style.display = "block";
 }
 
-function Period0()
-{
-	GetClassInfo();
-}
-
 function Period1()
 {
 	alert("1");
@@ -106,16 +101,6 @@ function Period7()
 }
 
 function Period8()
-{
-	GetClassInfo();
-}
-
-function Period9()
-{
-	GetClassInfo();
-}
-
-function Period10()
 {
 	GetClassInfo();
 }
