@@ -7,8 +7,7 @@ function addListener()
 	document.getElementById("secondpart").style.display = "none";
 	document.getElementById("lastpart").style.display = "none";
 	document.getElementById("btnnext").addEventListener("click",Next);
-	document.getElementById("btnsubmit").addEventListener("click",Submit)
-	document.getElementById("btnnoclass").addEventListener("click",Noclass);
+	document.getElementById("btnsubmit").addEventListener("click",Submit);
 }
 
 function Next()
@@ -161,9 +160,4 @@ function StoreClass()
 function DisplaySchedule()
 {
 	document.getElementById("lastpart").style.display = "block";
-}
-
-function Noclass()
-{
-	alert("No Class");
 }
