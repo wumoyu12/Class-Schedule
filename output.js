@@ -24,10 +24,10 @@ function displaySchedule() {
         const thuCourse = localStorage.getItem(`period${period}_thu_course`);
         const friCourse = localStorage.getItem(`period${period}_fri_course`);
 
-        document.getElementById(`period${period}_mon`).textContent = monCourse || "No Class";
-        document.getElementById(`period${period}_tue`).textContent = tueCourse || "No Class";
-        document.getElementById(`period${period}_wed`).textContent = wedCourse || "No Class";
-        document.getElementById(`period${period}_thu`).textContent = thuCourse || "No Class";
-        document.getElementById(`period${period}_fri`).textContent = friCourse || "No Class";
+        document.getElementById(`period${period}_mon`).textContent = monCourse;
+        document.getElementById(`period${period}_tue`).textContent = tueCourse;
+        document.getElementById(`period${period}_wed`).textContent = wedCourse;
+        document.getElementById(`period${period}_thu`).textContent = thuCourse;
+        document.getElementById(`period${period}_fri`).textContent = friCourse;
     }
 }
