@@ -1,0 +1,127 @@
+window.addEventListener("load", addListener);
+var firstname, lastname, idnum, idlength, grade, officeclass, counselor, office;
+
+function addListener() {
+    document.getElementById("firstpart").style.display = "block";
+    document.getElementById("secondpart").style.display = "none";
+    document.getElementById("lastpart").style.display = "none";
+    document.getElementById("btnnext").addEventListener("click", Next);
+    document.getElementById("btnsubmit").addEventListener("click", Submit);
+}
+
+function Next() {
+    GetInfo();
+}
+
+function GetInfo() {
+    firstname = document.getElementById("txtfirstname").value;
+    lastname = document.getElementById("txtlastname").value;
+    idnum = document.getElementById("txtid").value;
+    idlength = idnum.length;
+    grade = document.getElementById("txtgrade").value;
+    officeclass = document.getElementById("txtofficeclass").value;
+    counselor = document.getElementById("txtcounselor").value;
+    office = document.getElementById("txtoffice").value;
+    CheckSInfo();
+}
+
+function CheckSInfo() {
+    if (firstname == "" || lastname == "" || grade == "" || officeclass == "" || counselor == "" || office == "" || idnum == "" || idlength != 9) {
+        alert("Please fill out all the basic information fields before proceeding. If you already entered all information, then you might have entered an invalid ID number. It should be a nine-digit number.");
+        document.getElementById("txtid").value = "";
+        return;
+    }
+    if (grade > 12 || grade < 9 || parseFloat(grade) % 1 != 0) {
+        alert("Your grade level should be between 9 and 12. Please try again.");
+        document.getElementById("txtgrade").value = "";
+        return;
+    } else {
+        StoreInfo();
+    }
+}
+
+function StoreInfo() {
+    localStorage.setItem("firstname", firstname);
+    localStorage.setItem("lastname", lastname);
+    localStorage.setItem("idnum", idnum);
+    localStorage.setItem("grade", grade);
+    localStorage.setItem("officeclass", officeclass);
+    localStorage.setItem("counselor", counselor);
+    localStorage.setItem("office", office);
+
+    document.getElementById("firstpart").style.display = "none";
+    document.getElementById("secondpart").style.display = "block";
+}
+
+function GetClassInfo() {
+    var period = document.getElementById("txtperiod").value; // Manually entered or selected period
+    var course = document.getElementById("txtclass").value;
+    var room = document.getElementById("txtroom").value;
+    var teacher = document.getElementById("txtteacher").value;
+
+    // Check if the selected period is already filled (exists in localStorage)
+    if (localStorage.getItem("period" + period)) {
+        alert("This period has already been filled. Please choose another period.");
+        return; // Stop and let the user re-enter a different period
+    }
+
+    switch (period) {
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+            // Store the class information in localStorage for that period
+            localStorage.setItem("period" + period, period);
+            localStorage.setItem("course" + period, course);
+            localStorage.setItem("room" + period, room);
+            localStorage.setItem("teacher" + period, teacher);
+            break;
+        default:
+            alert("Invalid period selected.");
+            return;
+    }
+
+    CheckCInfo();
+}
+
+function CheckCInfo() {
+    var course = document.getElementById("txtclass").value;
+    var room = document.getElementById("txtroom").value;
+    var teacher = document.getElementById("txtteacher").value;
+
+    if (course == "" || room == "" || teacher == "") {
+        alert("Please fill out all the class information fields before submitting.");
+        return;
+    } else {
+        DisplaySchedule();
+    }
+}
+
+function DisplaySchedule() {
+    document.getElementById("secondpart").style.display = "none";
+    document.getElementById("lastpart").style.display = "block";
+    DisplaySavedSchedule();
+}
+
+function DisplaySavedSchedule() {
+    var scheduleDiv = document.getElementById("lastpart");
+    var scheduleHTML = '<h2>Student Schedule</h2>';
+    scheduleHTML += '<p>Name: ' + localStorage.getItem("firstname") + ' ' + localStorage.getItem("lastname") + '</p>';
+    scheduleHTML += '<p>ID: ' + localStorage.getItem("idnum") + '</p>';
+    scheduleHTML += '<p>Grade: ' + localStorage.getItem("grade") + '</p>';
+    scheduleHTML += '<p>Office Class: ' + localStorage.getItem("officeclass") + '</p>';
+    scheduleHTML += '<p>Counselor: ' + localStorage.getItem("counselor") + '</p>';
+
+    // Loop through periods 1 to 8 and display saved courses
+    for (var i = 1; i <= 8; i++) {
+        if (localStorage.getItem("period" + i)) {
+            scheduleHTML += '<p>Period ' + i + ': ' + localStorage.getItem("course" + i) + ' - Room: ' + localStorage.getItem("room" + i) + ' - Teacher: ' + localStorage.getItem("teacher" + i) + '</p>';
+        }
+    }
+
+    scheduleDiv.innerHTML = scheduleHTML;
+}
