@@ -244,4 +244,6 @@ function StoreClass()
 function DisplaySchedule()
 {
 	document.getElementById("lastpart").style.display = "block";
-}
+Try not to change the html and javascript if doesn't need to, and finish these two and also create a new output.html and output.js and also css to display the schedule and the schedule should be table
+do not use any advance programing and don't use the arrys and lists
+you can use the switch case if there is a lot of if else statement
