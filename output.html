@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html>
-	<head>
-	<script src="output.js"></script>
-	</head>
-	
-	<body>
-	
-	</body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule</title>
+    <link rel="stylesheet" href="customize.css">
+    <script src="output.js"></script>
+</head>
+<body>
+    <h1>Student Schedule</h1>
+
+    <div id="studentinfo">
+        <table>
+            <tbody>
+                <tr><td>First Name:</td><td id="firstname"></td></tr>
+                <tr><td>Last Name:</td><td id="lastname"></td></tr>
+                <tr><td>ID Number:</td><td id="idnum"></td></tr>
+                <tr><td>Grade:</td><td id="grade"></td></tr>
+                <tr><td>Office Class:</td><td id="officeclass"></td></tr>
+                <tr><td>Counselor:</td><td id="counselor"></td></tr>
+                <tr><td>Office:</td><td id="office"></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <h2>Schedule</h2>
+    <table border="1" id="schedule">
+        <thead>
+            <tr>
+                <th>Period</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody id="schedulebody">
+            <!-- Schedule rows will be populated by JavaScript -->
+        </tbody>
+    </table>
+</body>
 </html>
