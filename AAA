@@ -1,9 +1,99 @@
-colspan
-rowspan
-create a line between welmsg and askinfo
-switch case to enter the period
-//After 8 course display two buttons 
-  add(up to 10)
-  display schedule
+input.html
+<!DOCTYPE html>
+	<html>
+		<head>
+		
+			<title>Activity-Class Schedule</title>
+			<link rel="stylesheet" type="text/css" href="customize.css"></link>
+			<script src="input.js"></script>
+		</head>
+		
+		<body>
+		
+			<div id="firstpart">
+			<table>
 
-if the user enter lunch, the they don't have to enter the teacher
+					<tr>
+						<th>Student Information</th>
+					</tr>
+					
+					<tr> 
+						<td><label id="lblfirstname">First Name:</label></td>
+						<td><input type="text" id="txtfirstname" placeholder="First name" autofocus></input></td>
+					</tr>
+						
+					<tr> 
+						<td><label id="lbllastname">Last Name:</label></td>
+						<td><input type="text" id="txtlastname" placeholder="Last name" autofocus></input></td>
+					</tr>
+						
+					<tr> 
+						<td><label id="lblid">ID Number: </label></td>
+						<td><input type="text" id="txtid" placeholder="OSIS Number" autofocus></input></td>
+					</tr>
+						
+					<tr> 
+						<td><label id="lblgrade">Grade Level:</label></td>
+						<td><input type="text" id="txtgrade" placeholder="Grade level" autofocus></input></td>
+					</tr>
+					
+					<tr> 
+						<td><label id="lblofficeclass">Office Class:</label></td>
+						<td><input type="text" id="txtofficeclass" placeholder="Office Class" autofocus></input></td>
+					</tr>
+					
+					<tr> 
+						<td><label id="lblcounselor">Counselor:</label></td>
+						<td><input type="text" id="txtcounselor" placeholder="Counselor name" autofocus></input></td>
+					</tr>
+					
+					<tr> 
+						<td><label id="lbloffice">Counselor Office:</label></td>
+						<td><input type="text" id="txtoffice" placeholder="Room number" autofocus></input></td>
+					</tr>
+					
+				</table>
+				
+				<button type="button" id="btnnext">Next</button>
+				
+			</div>
+			
+			<div id="secondpart">
+			<table>
+				
+				<tr>
+					<th>Class Information</th>
+					<th><label id="lblperiod">Period 0</label></th>
+				</tr>
+				
+				<tr>
+					<td><label id="lblclass">Course Name:</label></td>
+					<td><input type="text" id="txtclass" placeholder="Course name" autofocus></input></td>
+				</tr>
+							
+				<tr>
+					<td><label id="lblroom">Room Number:</label></td>
+					<td><input type="text" id="txtroom" placeholder="Room number" autofocus></input></td>
+				</tr>
+				
+				<tr>
+					<td><label id="lblteacher">Teacher Name:</label></td>
+					<td><input type="text" id="txtteacher" placeholder="Teacher name" autofocus></input></td>
+				</tr>
+				
+			</table>
+				
+				<button type="button" id="btnsubmit">AddCourse</button>
+				
+			</div>
+			
+			<div id="lastpart">
+				<a href="schedule.html">
+					<button type="button" id="btnschedule">Schedule</button>
+				</a>
+			</div>		
+		</body>
+		
+	</html>
+
+input.js
