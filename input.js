@@ -41,12 +41,13 @@ function CheckSInfo() {
     if (firstname == "" || lastname == "" || grade == "" || schoolyear == "" || officeclass == "" || counselor == "" || office == "" || idnum == "")
     {
         alert("Please fill out all the basic information fields before proceeding. If you already entered all information, then you might have entered an invalid ID number.");
-        return;
+	return;
     }
 
     if(idlength != 9)
     {
 	alert("Your ID number is invalid, it should be a nine-digit number.");
+	document.getElementById("txtid").focus();
         document.getElementById("txtid").value = "";
 	return;
     }
@@ -54,7 +55,8 @@ function CheckSInfo() {
     if (grade > 12 || grade < 9 || parseFloat(grade) % 1 != 0) {
         alert("Your grade level should be between 9 and 12. Please try again.");
         document.getElementById("txtgrade").value = "";
-        return;
+        document.getElementById("txtgrade").focus();
+	return;
     } 
     else
     {
