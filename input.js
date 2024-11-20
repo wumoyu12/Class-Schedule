@@ -89,13 +89,79 @@ function Period1()
 
 function Period2()
 {
-    document.getElementById(period).innerHTML = "Period 2";
+    document.getElementById(lblperiod).innerHTML = "Period 2";
     GetClassInfo();
     course2 = course;
     room2 = room;
     teacher2 = teacher;
     Clear();
     Period3();
+}
+
+function Period3()
+{
+    document.getElementById(lblperiod).innerHTML = "Period 3";
+    GetClassInfo();
+    course3 = course;
+    room3 = room;
+    teacher3 = teacher;
+    Clear();
+    Period4();
+}
+
+function Period4()
+{
+    document.getElementById(lblperiod).innerHTML = "Period 4";
+    GetClassInfo();
+    course4 = course;
+    room4 = room;
+    teacher4 = teacher;
+    Clear();
+    Period5();
+}
+
+function Period5()
+{
+    document.getElementById(lblperiod).innerHTML = "Period 5";
+    GetClassInfo();
+    course5 = course;
+    room5 = room;
+    teacher5 = teacher;
+    Clear();
+    Period6();
+}
+
+function Period6()
+{
+    document.getElementById(lblperiod).innerHTML = "Period 6";
+    GetClassInfo();
+    course6 = course;
+    room6 = room;
+    teacher6 = teacher;
+    Clear();
+    Period7();
+}
+
+function Period7()
+{
+    document.getElementById(lblperiod).innerHTML = "Period 7";
+    GetClassInfo();
+    course7 = course;
+    room7 = room;
+    teacher7 = teacher;
+    Clear();
+    Period8();
+}
+
+function Period8()
+{
+    document.getElementById(lblperiod).innerHTML = "Period 8";
+    GetClassInfo();
+    course8 = course;
+    room8 = room;
+    teacher8 = teacher;
+    Clear();
+    StoreClass();
 }
 
 function GetClassInfo() 
@@ -125,62 +191,37 @@ function Clear()
 
 function StoreClass()
 {
-    if (period1)
-	{
-        localStorage.setItem("period1", period1);
-        localStorage.setItem("course1", course1);
-        localStorage.setItem("room1", room1);
-        localStorage.setItem("teacher1", teacher1);
-    }
-    if (period2)
-	{
-        localStorage.setItem("period2", period2);
-        localStorage.setItem("course2", course2);
-        localStorage.setItem("room2", room2);
-        localStorage.setItem("teacher2", teacher2);
-    }
-    if (period3)
-	{
-        localStorage.setItem("period3", period3);
-        localStorage.setItem("course3", course3);
-        localStorage.setItem("room3", room3);
-        localStorage.setItem("teacher3", teacher3);
-    }
-    if (period4)
-	{
-        localStorage.setItem("period4", period4);
-        localStorage.setItem("course4", course4);
-        localStorage.setItem("room4", room4);
-        localStorage.setItem("teacher4", teacher4);
-    }
-    if (period5)
-	{
-        localStorage.setItem("period5", period5);
-        localStorage.setItem("course5", course5);
-        localStorage.setItem("room5", room5);
-        localStorage.setItem("teacher5", teacher5);
-    }
-    if (period6)
-	{
-        localStorage.setItem("period6", period6);
-        localStorage.setItem("course6", course6);
-        localStorage.setItem("room6", room6);
-        localStorage.setItem("teacher6", teacher6);
-    }
-    if (period7)
-	{
-        localStorage.setItem("period7", period7);
-        localStorage.setItem("course7", course7);
-        localStorage.setItem("room7", room7);
-        localStorage.setItem("teacher7", teacher7);
-    }
-    if (period8)
-	{
-        localStorage.setItem("period8", period8);
-        localStorage.setItem("course8", course8);
-        localStorage.setItem("room8", room8);
-        localStorage.setItem("teacher8", teacher8);
-    }
+    localStorage.setItem("course1", course1);
+    localStorage.setItem("room1", room1);
+    localStorage.setItem("teacher1", teacher1);
+
+    localStorage.setItem("course2", course2);
+    localStorage.setItem("room2", room2);
+    localStorage.setItem("teacher2", teacher2);
+	
+    localStorage.setItem("course3", course3);
+    localStorage.setItem("room3", room3);
+    localStorage.setItem("teacher3", teacher3);
+
+    localStorage.setItem("course4", course4);
+    localStorage.setItem("room4", room4);
+    localStorage.setItem("teacher4", teacher4);
+
+    localStorage.setItem("course5", course5);
+    localStorage.setItem("room5", room5);
+    localStorage.setItem("teacher5", teacher5);
+    
+    localStorage.setItem("course6", course6);
+    localStorage.setItem("room6", room6);
+    localStorage.setItem("teacher6", teacher6);
+	
+    localStorage.setItem("course7", course7);
+    localStorage.setItem("room7", room7);
+    localStorage.setItem("teacher7", teacher7);
+
+    localStorage.setItem("course8", course8);
+    localStorage.setItem("room8", room8);
+    localStorage.setItem("teacher8", teacher8);
 
     DisplaySchedule();
 }
