@@ -79,9 +79,23 @@ function StoreInfo() {
 
 function Period1()
 {
+    GetClassInfo();
     course1 = course;
     room1 = room;
     teacher1 = teacher;
+    Clear();
+    Period2();
+}
+
+function Period2()
+{
+    document.getElementById(period).innerHTML = "Period 2";
+    GetClassInfo();
+    course2 = course;
+    room2 = room;
+    teacher2 = teacher;
+    Clear();
+    Period3();
 }
 
 function GetClassInfo() 
@@ -90,29 +104,20 @@ function GetClassInfo()
     course = document.getElementById("txtclass").value;
     room = document.getElementById("txtroom").value;
     teacher = document.getElementById("txtteacher").value;
-    Period1()
-}
-
     CheckCInfo();
 }
 
 function CheckCInfo()
 {
     if (course == "" || room == "" || teacher == "")
-	{
+    {
         alert("Please fill out all the class information fields before submitting.");
         return;
-    } 
-	else
-	{
-        StoreClass();
-		Clear();
     }
 }
 
 function Clear()
 {
-	document.getElementById("txtperiod").value = ""; 
 	document.getElementById("txtclass").value = "";
 	document.getElementById("txtroom").value = "";
 	document.getElementById("txtteacher").value = "";
