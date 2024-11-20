@@ -1,6 +1,6 @@
 window.addEventListener("load", addListener);
 var firstname, lastname, idnum, idlength, grade, officeclass, counselor, office, period, course, room, teacher, schoolyear;
-var course1, room1, teacher1, course2, room2, teacher2, course3, room3, teacher3, period4, room4, teacher4, course5, room5, teacher5, course6, room6, teacher6, course7, room7, teacher7, course8, room8, teacher8;
+var course1, room1, teacher1, course2, room2, teacher2, course3, room3, teacher3, room4, teacher4, course5, room5, teacher5, course6, room6, teacher6, course7, room7, teacher7, course8, room8, teacher8;
 
 function addListener()
 {
