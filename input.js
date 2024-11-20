@@ -30,6 +30,7 @@ function GetInfo()
     idnum = document.getElementById("txtid").value;
     idlength = idnum.length;
     grade = document.getElementById("txtgrade").value;
+    schoolyear = document.getElementById("txtid").value;
     officeclass = document.getElementById("txtofficeclass").value;
     counselor = document.getElementById("txtcounselor").value;
     office = document.getElementById("txtoffice").value;
@@ -47,13 +48,13 @@ function CheckSInfo() {
     if(idlength != 9)
     {
 	alert("Your ID number is invalid, it should be a nine-digit number.");
-        document.getElementById("txtgrade").value = "";
+        document.getElementById("txtid").value = "";
 	return;
     }
 	
     if (grade > 12 || grade < 9 || parseFloat(grade) % 1 != 0) {
         alert("Your grade level should be between 9 and 12. Please try again.");
-        document.getElementById("txtid").value = "";
+        document.getElementById("txtgrade").value = "";
         return;
     } 
     else
