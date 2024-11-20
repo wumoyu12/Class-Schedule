@@ -2,7 +2,8 @@ window.addEventListener("load", addListener);
 var firstname, lastname, idnum, idlength, grade, officeclass, counselor, office, period, course, room, teacher;
 var period1, course1, room1, teacher1, period2, course2, room2, teacher2, period3, course3, room3, teacher3, period4, course4, room4, teacher4, period5, course5, room5, teacher5, period6, course6, room6, teacher6, period7, course7, room7, teacher7, period8, course8, room8, teacher8;
 
-function addListener() {
+function addListener()
+{
     document.getElementById("welmsg").style.display = "block";
     document.getElementById("firstpart").style.display = "none";
     document.getElementById("secondpart").style.display = "none";
@@ -22,7 +23,8 @@ function Next() {
     GetInfo();
 }
 
-function GetInfo() {
+function GetInfo()
+{
     firstname = document.getElementById("txtfirstname").value;
     lastname = document.getElementById("txtlastname").value;
     idnum = document.getElementById("txtid").value;
@@ -35,16 +37,27 @@ function GetInfo() {
 }
 
 function CheckSInfo() {
-    if (firstname == "" || lastname == "" || grade == "" || officeclass == "" || counselor == "" || office == "" || idnum == "" || idlength != 9) {
-        alert("Please fill out all the basic information fields before proceeding. If you already entered all information, then you might have entered an invalid ID number. It should be a nine-digit number.");
+    if (firstname == "" || lastname == "" || grade == "" || officeclass == "" || counselor == "" || office == "" || idnum == "")
+    {
+        alert("Please fill out all the basic information fields before proceeding. If you already entered all information, then you might have entered an invalid ID number.");
         document.getElementById("txtid").value = "";
         return;
     }
+
+    if(idlength != 9)
+    {
+	alert("Your ID number is invalid, it should be a nine-digit number.");
+        document.getElementById("txtgrade").value = "";
+	return;
+    }
+	
     if (grade > 12 || grade < 9 || parseFloat(grade) % 1 != 0) {
         alert("Your grade level should be between 9 and 12. Please try again.");
-        document.getElementById("txtgrade").value = "";
+        document.getElementById("txtid").value = "";
         return;
-    } else {
+    } 
+    else
+    {
         StoreInfo();
     }
 }
