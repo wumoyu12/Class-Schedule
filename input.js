@@ -3,11 +3,19 @@ var firstname, lastname, idnum, idlength, grade, officeclass, counselor, office,
 var period1, course1, room1, teacher1, period2, course2, room2, teacher2, period3, course3, room3, teacher3, period4, course4, room4, teacher4, period5, course5, room5, teacher5, period6, course6, room6, teacher6, period7, course7, room7, teacher7, period8, course8, room8, teacher8;
 
 function addListener() {
-    document.getElementById("firstpart").style.display = "block";
+    document.getElementById("lastpart").style.display = "block";
+    document.getElementById("firstpart").style.display = "none";
     document.getElementById("secondpart").style.display = "none";
     document.getElementById("lastpart").style.display = "none";
+    document.getElementById("btnstart").addEventListener("click", Start);
     document.getElementById("btnnext").addEventListener("click", Next);
     document.getElementById("btnsubmit").addEventListener("click", GetClassInfo);
+}
+
+function Start()
+{
+    document.getElementById("").style.display = "none";
+    document.getElementById("firstpart").style.display = "block";
 }
 
 function Next() {
