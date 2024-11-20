@@ -77,66 +77,22 @@ function StoreInfo() {
     document.getElementById("secondpart").style.display = "block";
 }
 
+function Period1()
+{
+    course1 = course;
+    room1 = room;
+    teacher1 = teacher;
+}
+
 function GetClassInfo() 
 {
     period = document.getElementById("txtperiod").value; 
     course = document.getElementById("txtclass").value;
     room = document.getElementById("txtroom").value;
     teacher = document.getElementById("txtteacher").value;
+    Period1()
+}
 
-    switch (period) {
-        case "1":
-            period1 = period;
-            course1 = course;
-            room1 = room;
-            teacher1 = teacher;
-            break;
-        case "2":
-            period2 = period;
-            course2 = course;
-            room2 = room;
-            teacher2 = teacher;
-            break;
-        case "3":
-            period3 = period;
-            course3 = course;
-            room3 = room;
-            teacher3 = teacher;
-            break;
-        case "4":
-            period4 = period;
-            course4 = course;
-            room4 = room;
-            teacher4 = teacher;
-            break;
-        case "5":
-            period5 = period;
-            course5 = course;
-            room5 = room;
-            teacher5 = teacher;
-            break;
-        case "6":
-            period6 = period;
-            course6 = course;
-            room6 = room;
-            teacher6 = teacher;
-            break;
-        case "7":
-            period7 = period;
-            course7 = course;
-            room7 = room;
-            teacher7 = teacher;
-            break;
-        case "8":
-            period8 = period;
-            course8 = course;
-            room8 = room;
-            teacher8 = teacher;
-            break;
-        default:
-            alert("Invalid period selected.");
-            return;
-    }
     CheckCInfo();
 }
 
