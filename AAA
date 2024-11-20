@@ -1,0 +1,951 @@
+index.html
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Activity - Class Schedule</title>
+		<link rel="stylesheet" type="text/css" href="customize.css"></link>
+		<script src="schedule.js"></script>
+	</head>
+	
+	<body>
+		<div id="firstpart">
+			<table id="input">
+				<tr>
+					<th colspan = "3" id="FirstRow">Class Schedule</th>
+				</tr>
+				
+				<tr>
+					<th colspan = "3" id="SecondRow">Student Information<hr color="#131564"></hr></th>
+				</tr>
+				
+				<tr>
+					<td rowspan = "11" id="Image">
+					<img src="C:\Users\SHIQIWU\Downloads\download.png" width="157"></img>
+					</td>
+				</tr>
+				
+				<tr>
+					<td><label id="lblschool">School: </label></td>
+					<td><input type="text" id="txtschool"></input></td>
+				</tr>
+				
+				<tr>
+					<td><label id="lblyear">School Year: </label></td>
+					<td><input type="text" id="txtyear"></input></td>
+				</tr>
+				
+				<tr>
+					<td><label id="lblterm">Term Id(1 or 2): </label></td>
+					<td><input type="text" id="txtterm"></input></td>
+				</tr>
+				
+				<tr>
+					<td><label id="lblfname">First Name: </label></td>
+					<td><input type="text" id="txtfname"></input></td>
+				</tr>	
+				<tr>
+					<td><label id="lbllname">Last Name: </label></td>
+					<td><input type="text" id="txtlname"></input></td>
+				</tr>
+				<tr>	
+					<td><label id="lblID">ID Number(9 digits): </label></td>
+					<td><input type="text" id="txtID"></input></td>
+				</tr>
+				<tr>	
+					<td><label id="lblgrade">Grade Level(9-12): </label></td>
+					<td><input type="text" id="txtgrade"></input></td>
+				</tr>
+				<tr>	
+					<td><label id="lblofficialclass">Official Class: </label></td>
+					<td><input type="text" id="txtofficialclass"></input></td>
+				</tr>
+				<tr>	
+					<td><label id="lblcounselor">Counselor: </label></td>
+					<td><input type="text" id="txtcounselor"></input></td>
+				</tr>
+				<tr>	
+					<td><label id="lblOfficeRoom">Office Room: </label></td>
+					<td><input type="text" id="txtOfficeRoom"></input></td>
+				</tr>
+			</table>
+			<button type="button" id="btnNext">NEXT</button><br>
+		</div>
+		
+		<div id="secondpart">
+			<table id="input2">
+				<tr>
+					<th id="ClassInfo">Courses Information(8 courses)<hr color="#131564" width="500px"></th>
+				</tr>
+			</table>
+			
+			<table>	
+				<tr>
+					<td rowspan = "10" id="Image">
+					<img src="C:\Users\SHIQIWU\Downloads\download.png" width="157"></img>
+					</td>
+				</tr>
+				
+				<tr>
+					<td><label id="lblcourse">Course 1: </label></td>
+					<td><input type="text" id="txtcourse"></input></td>
+				</tr>
+				
+				<tr>
+					<td><label id="lblteacher">Teacher's Name: </label></td>
+					<td><input type="text" id="txtteacher"></input></td>
+				</tr>
+					
+				<tr>
+					<td><label id="lblroom">Room Number: </label></td>
+					<td><input type="text" id="txtroom"></input></td>
+				</tr>
+				
+				<tr>	
+					<td><label id="lblStartTime">Start Time: </label></td>
+					<td><input type="text" id="txtStartTime"></input></td>
+				</tr>
+				
+				<tr>	
+					<td><label id="lblEndTime">End Time: </label></td>
+					<td><input type="text" id="txtEndTime"></input></td>
+				</tr>
+			</table>
+			
+			<button type="button" id="btnAddCourse">Add Course</button>
+		</div>
+		
+		<div id="thirdpart">
+			<a href="output.html">
+				<button type="button" id="btnSubmit">Submit and Make the Schedule</button>
+			</a>
+		</div>
+		
+	</body>
+	
+</html>
+
+--------------------------------------------------------------------------------------------
+customize.css
+
+body
+{
+	color: #131564;
+	font-family: Times New Roman;
+	background-color: #7ab3b4;
+}
+
+h1,h2
+{
+	color: #574453;
+}
+
+input
+{
+	display: inline-block;
+	width: 120px;
+	font-family: Times New Roman;
+}
+
+button
+{
+	font-family: Times New Roman;
+}
+
+td
+{
+	width: 37%
+}
+
+td[id="FirstRow"],[id="SecondRow"],[id="ClassInfo"]
+{
+	text-align:center;
+}
+
+
+--------------------------------------------------------------------------------------------
+
+schedule.js
+
+window.addEventListener("load",AddListener);
+window.addEventListener("load",InitControls);
+var school = "", year = "", term = "", firstname = "", lastname = "", id = "", gradelevel = "", officialclass = "", counselor = "", 
+officeroom = "", course = "", teachername = "", roomnum = "", stime = "", etime  = "", period = 0, TrueFalse;
+function AddListener()
+{
+	document.getElementById("btnNext").addEventListener("click",GetInfo);
+	document.getElementById("btnAddCourse").addEventListener("click",WhichPeriod);
+}
+
+function InitControls()
+{
+	document.getElementById("txtschool").focus();
+	document.getElementById("secondpart").style.display = "none";
+	document.getElementById("thirdpart").style.display = "none";
+}
+
+function GetInfo()
+{
+	localStorage.clear();
+	school = document.getElementById("txtschool").value;
+	localStorage.setItem("SCHOOL",school);
+	year = document.getElementById("txtyear").value;
+	localStorage.setItem("YEAR",year);
+	term = document.getElementById("txtterm").value;
+	localStorage.setItem("TERM",term);
+	firstname = document.getElementById("txtfname").value;
+	localStorage.setItem("FIRSTNAME",firstname);
+	lastname = document.getElementById("txtlname").value;
+	localStorage.setItem("LASTNAME",lastname);
+	id = document.getElementById("txtID").value;
+	localStorage.setItem("ID",id);
+	gradelevel = document.getElementById("txtgrade").value;
+	localStorage.setItem("GRADELEVEL",gradelevel);
+	officialclass = document.getElementById("txtofficialclass").value;
+	localStorage.setItem("OFFICIALCLASS",officialclass);
+	counselor = document.getElementById("txtcounselor").value;
+	localStorage.setItem("COUNSELOR",counselor);
+	officeroom = document.getElementById("txtOfficeRoom").value;
+	localStorage.setItem("OFFICEROOM",officeroom);
+	
+	CheckStudentInfo();
+}
+
+function CheckStudentInfo()
+{
+	msg = "";
+	if(officeroom == "")
+	{
+		msg = "R";
+		document.getElementById("txtOfficeRoom").focus();
+	}
+	if(counselor == "")
+	{
+		msg = "C";
+		document.getElementById("txtcounselor").focus();
+	}
+	if(officialclass == "")
+	{
+		msg = "O";
+		document.getElementById("txtofficialclass").focus();
+	}
+	CheckDecimal = parseFloat(gradelevel) % 1;
+	if(CheckDecimal != 0 || gradelevel == "" || (gradelevel < 9 || gradelevel > 12))
+	{
+		msg = "G";
+		document.getElementById("txtgrade").focus();
+	}
+	length = id.length
+	CheckDecimal = parseFloat(id) % 1;
+	if(id == "" || length != 9 || CheckDecimal != 0)
+	{
+		msg = "I";
+		document.getElementById("txtID").focus();
+	}
+	if(lastname == "")
+	{
+		msg = "L";
+		document.getElementById("txtlname").focus();
+	}
+	if(firstname == "")
+	{
+		msg = "F";
+		document.getElementById("txtfname").focus();
+	}
+	if(term == 1 || term == 2)
+	{
+		truefalse = "true";
+	}
+	else
+	{
+		document.getElementById("txtterm").focus();
+		msg = "T";
+	}
+	length = year.length
+	CheckDecimal = parseFloat(year) % 1;
+	if(year == "" || length != 4 || CheckDecimal != 0)
+	{
+		msg = "Y";
+		document.getElementById("txtyear").focus();
+	}
+	if(school == "")
+	{
+		msg = "S";
+		document.getElementById("txtschool").focus();
+	}
+	if(msg == "")
+	{
+		SwitchCourseInfo();
+	}
+	else
+	{
+		alert("Missing Information / Invalid format");
+	}
+
+}
+
+function SwitchCourseInfo()
+{
+	document.getElementById("firstpart").style.display = "none";
+	document.getElementById("secondpart").style.display = "block";
+	document.getElementById("txtcourse").focus();
+}
+
+function WhichPeriod()
+{
+	CourseInfo();
+	if(TrueFalse == "true")
+	{
+		document.getElementById("txtcourse").value = "";
+		document.getElementById("txtteacher").value = "";
+		document.getElementById("txtroom").value = "";
+		document.getElementById("txtStartTime").value = "";
+		document.getElementById("txtEndTime").value = "";
+		document.getElementById("txtcourse").focus();
+		
+		WhichPeriod2();
+	}
+}
+
+function WhichPeriod2()
+{
+	//localStorage.setItem("MESSAGE",period);
+	if(period <= 8)
+	{
+		labelPD = period + 1
+		document.getElementById("lblcourse").textContent = "Course" +  labelPD + ":";
+		StorageCourse = "COURSE" + period;
+		StorageTeacher = "TEACHERNAME" + period;
+		StorageRoomNum = "ROOMNUM" + period;
+		StorageStime = "STIME" + period;
+		StorageEtime = "ETIME" + period;
+		localStorage.setItem(StorageCourse,course);
+		localStorage.setItem(StorageTeacher,teachername);
+		localStorage.setItem(StorageRoomNum,roomnum);
+		localStorage.setItem(StorageStime,stime);
+		localStorage.setItem(StorageEtime,etime);		
+	}
+	if(period == 8)
+	{
+		document.getElementById("lblcourse").textContent = "Course:";
+		document.getElementById("ClassInfo").textContent = "If you have an advisory class, please enter the course info and click on Add Course. If not, please click on SUBMIT";
+		document.getElementById("lblStartTime").textContent = "Day(1-5):"
+		document.getElementById("lblEndTime").textContent = "Period(1-8):"
+		document.getElementById("thirdpart").style.display = "block";
+	}
+	if(period == 9)
+	{
+		document.getElementById("ClassInfo").textContent = "Please click on SUBMIT";
+		localStorage.setItem("COURSEA",course);
+		localStorage.setItem("TEACHERNAMEA",teachername);
+		localStorage.setItem("ROOMNUMA",roomnum);
+		localStorage.setItem("DAYA",stime);
+		localStorage.setItem("PERIODA",etime);
+		
+		document.getElementById("txtcourse").disabled = true;
+		document.getElementById("txtteacher").disabled = true;
+		document.getElementById("txtroom").disabled = true;
+		document.getElementById("txtStartTime").disabled = true;
+		document.getElementById("txtEndTime").disabled = true;
+	}
+}
+
+function CourseInfo()
+{
+	course = document.getElementById("txtcourse").value;
+	teachername = document.getElementById("txtteacher").value;
+	roomnum = document.getElementById("txtroom").value;
+	stime = document.getElementById("txtStartTime").value;
+	etime = document.getElementById("txtEndTime").value;
+	CheckClassInfo();
+}
+
+function CheckClassInfo()
+{
+	msg = "";
+	TrueFalse = "false";
+	if(etime == "")
+	{
+		msg = "e";
+		document.getElementById("txtEndTime").focus();
+	}
+	if(stime == "")
+	{
+		msg = "s";
+		document.getElementById("txtStartTime").focus();
+	}
+	if(roomnum == "")
+	{
+		msg = "r";
+		document.getElementById("txtroom").focus();
+	}
+	if(teachername == "")
+	{
+		msg = "t";
+		document.getElementById("txtteacher").focus();
+	}
+	if(course == "")
+	{
+		msg = "c";
+		document.getElementById("txtcourse").focus();
+	}
+	if(period == 8)
+	{
+		CheckDayAndPD();
+	}
+	if(msg == "")
+	{
+		TrueFalse = "true";
+		period = period + 1;
+	}
+	else
+	{
+		alert("Missing Information / Invalid format");
+	}
+}
+
+function CheckDayAndPD()
+{
+	CheckDecimal = parseFloat(etime) % 1;
+	if(CheckDecimal != 0 || etime < 1 || etime > 8)
+	{
+		msg = "e";
+		document.getElementById("txtEndTime").focus();
+	}
+	CheckDecimal = parseFloat(stime) % 1;
+	if(CheckDecimal != 0 || stime < 1 || stime > 5)
+	{
+		msg = "s";
+		document.getElementById("txtStartTime").focus();
+	}
+}
+
+--------------------------------------------------------------------------------------------
+output.html
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Output</title>
+		<link rel="stylesheet" type="text/css" href="customize2.css"></link>
+		<script src="schedule2.js"></script>
+	</head>
+	<body>
+	 	<table id="Head" style="width:92%">
+	 		<tr>
+				<td rowspan = "4" id="image">
+				<img src="C:\Users\SHIQIWU\Downloads\download.png" width="157"></img>
+				</td>
+			</tr>
+			<tr>
+				<td id="nycdoe"><label style="font-size:27px">NYC Department Of Education</label></td>
+				<td rowspan = "4" id="image2">
+				<img src="C:\Users\SHIQIWU\Downloads\download.png" width="157"></img>
+				</td>
+			</tr>
+			<tr><td id="GSwB"><label style="font-size:23px">Grid Schedule with BELL</label></td></tr>
+			<tr><td id="HHS"><label style="font-size:23px">Hillcrest High School</label></td></tr>
+			<tr><td id="line" colspan="3"><hr color="black"></hr></td></tr>
+	 	</table>
+	 	
+	 	<table style="width:92%">
+	 		<tr>
+	 			<td id="info"><label id="schoolinfo"></label>School: 28Q505</td>
+	 			<td id="info"><label id="yearinfo"></label></td>
+	 			<td id="info"><label id="terminfo"></label></td>
+	 		</tr>
+	 		<tr><td id="line" colspan="3"><hr color="black"></hr></td></tr>
+	 	</table>
+		<div id="InfoPart">
+			
+			<table id="Information" style="width:92%">
+				<tr>
+					<td id="info"><label id="nameinfo"></label></td>
+					<td id="info"><label id="OSISinfo"></label></td>
+					<td id="info"><label id="gradeinfo"></label></td>
+					<td id="info"><label id="OfficialC"></label></td>
+					<td id="info"><label id="counselorinfo"></label></td>
+				</tr>	
+				
+				<tr>
+					<td id="info"><label id="SortedBy">Sorted By: Student Name</label></td>
+					<td id="info" colspan = "2"><label id="SelectOption">Select Option: Group Id: 1087</label></td>
+					<td id="info"><label id="OfficialR"></label></td>
+					<td id="info"><label id="OmitR">Omit Room# Yes</label></td>
+				</tr>	
+			</table>
+			
+			<table id="Course" style="width:92%">
+				<tr id="Day">
+					<th><label>Period</label></th>
+					<th><label id="Mon">Monday</label></th>
+					<th><label id="Tue">Tuesday</label></th>
+					<th><label id="Wed">Wednesday</label></th>
+					<th><label id="Thu">Thursday</label></th>
+					<th><label id="Fri">Friday</label></th>
+				</tr>
+			
+				<tr>
+					<td id="PD"><label>1</label></td>
+					
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr>
+								<td id="inputinfo"><label id="Mon1a"></label></td>
+								<td id="inputinfo2"><label id="Mon1c"></label></td>
+							</tr>
+							<tr>
+								<td id="inputinfo3"><label id="Mon1b"></label></td>
+								<td id="inputinfo4"><label id="Mon1d"></label></td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr>
+								<td id="inputinfo"><label id="Tue1a"></label></td>
+								<td id="inputinfo2"><label id="Tue1c"></label></td>
+							</tr>
+							<tr>
+								<td id="inputinfo3"><label id="Tue1b"></label></td>
+								<td id="inputinfo4"><label id="Tue1d"></label></td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr>
+								<td id="inputinfo"><label id="Wed1a"></label></td>
+								<td id="inputinfo2"><label id="Wed1c"></label></td>
+							</tr>
+							<tr>
+								<td id="inputinfo3"><label id="Wed1b"></label></td>
+								<td id="inputinfo4"><label id="Wed1d"></label></td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr>
+								<td id="inputinfo"><label id="Thu1a"></label></td>
+								<td id="inputinfo2"><label id="Thu1c"></label></td>
+							</tr>
+							<tr>
+								<td id="inputinfo3"><label id="Thu1b"></label></td>
+								<td id="inputinfo4"><label id="Thu1d"></label></td>
+							</tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr>
+								<td id="inputinfo"><label id="Fri1a"></label></td>
+								<td id="inputinfo2"><label id="Fri1c"></label></td>
+							</tr>
+							<tr>
+								<td id="inputinfo3"><label id="Fri1b"></label></td>
+								<td id="inputinfo4"><label id="Fri1d"></label></td>
+							</tr>
+						</table>
+					</td>
+				</tr>
+			
+				<tr>
+					<td id="PD"><label>2</label></td>
+					
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Mon2a"></label></td><td id="inputinfo2"><label id="Mon2c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Mon2b"></label></td><td id="inputinfo4"><label id="Mon2d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Tue2a"></label></td><td id="inputinfo2"><label id="Tue2c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Tue2b"></label></td><td id="inputinfo4"><label id="Tue2d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Wed2a"></label></td><td id="inputinfo2"><label id="Wed2c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Wed2b"></label></td><td id="inputinfo4"><label id="Wed2d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Thu2a"></label></td><td id="inputinfo2"><label id="Thu2c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Thu2b"></label></td><td id="inputinfo4"><label id="Thu2d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Fri2a"></label></td><td id="inputinfo2"><label id="Fri2c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Fri2b"></label></td><td id="inputinfo4"><label id="Fri2d"></label></td></tr>
+						</table>
+					</td>
+				</tr>
+			
+				<tr>
+					<td id="PD"><label>3</label></td>
+					
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Mon3a"></label></td><td id="inputinfo2"><label id="Mon3c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Mon3b"></label></td><td id="inputinfo4"><label id="Mon3d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Tue3a"></label></td><td id="inputinfo2"><label id="Tue3c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Tue3b"></label></td><td id="inputinfo4"><label id="Tue3d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Wed3a"></label></td><td id="inputinfo2"><label id="Wed3c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Wed3b"></label></td><td id="inputinfo4"><label id="Wed3d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Thu3a"></label></td><td id="inputinfo2"><label id="Thu3c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Thu3b"></label></td><td id="inputinfo4"><label id="Thu3d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Fri3a"></label></td><td id="inputinfo2"><label id="Fri3c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Fri3b"></label></td><td id="inputinfo4"><label id="Fri3d"></label></td></tr>
+						</table>
+					</td>
+				</tr>	
+				
+				<tr>
+					<td id="PD"><label>4</label></td>
+					
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Mon4a"></label></td><td id="inputinfo2"><label id="Mon4c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Mon4b"></label></td><td id="inputinfo4"><label id="Mon4d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Tue4a"></label></td><td id="inputinfo2"><label id="Tue4c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Tue4b"></label></td><td id="inputinfo4"><label id="Tue4d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Wed4a"></label></td><td id="inputinfo2"><label id="Wed4c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Wed4b"></label></td><td id="inputinfo4"><label id="Wed4d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Thu4a"></label></td><td id="inputinfo2"><label id="Thu4c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Thu4b"></label></td><td id="inputinfo4"><label id="Thu4d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Fri4a"></label></td><td id="inputinfo2"><label id="Fri4c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Fri4b"></label></td><td id="inputinfo4"><label id="Fri4d"></label></td></tr>
+						</table>
+					</td>
+				</tr>		
+				
+				<tr>
+					<td id="PD"><label>5</label></td>
+					
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Mon5a"></label></td><td id="inputinfo2"><label id="Mon5c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Mon5b"></label></td><td id="inputinfo4"><label id="Mon5d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Tue5a"></label></td><td id="inputinfo2"><label id="Tue5c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Tue5b"></label></td><td id="inputinfo4"><label id="Tue5d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Wed5a"></label></td><td id="inputinfo2"><label id="Wed5c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Wed5b"></label></td><td id="inputinfo4"><label id="Wed5d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Thu5a"></label></td><td id="inputinfo2"><label id="Thu5c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Thu5b"></label></td><td id="inputinfo4"><label id="Thu5d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Fri5a"></label></td><td id="inputinfo2"><label id="Fri5c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Fri5b"></label></td><td id="inputinfo4"><label id="Fri5d"></label></td></tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td id="PD"><label>6</label></td>
+					
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Mon6a"></label></td><td id="inputinfo2"><label id="Mon6c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Mon6b"></label></td><td id="inputinfo4"><label id="Mon6d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Tue6a"></label></td><td id="inputinfo2"><label id="Tue6c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Tue6b"></label></td><td id="inputinfo4"><label id="Tue6d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Wed6a"></label></td><td id="inputinfo2"><label id="Wed6c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Wed6b"></label></td><td id="inputinfo4"><label id="Wed6d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Thu6a"></label></td><td id="inputinfo2"><label id="Thu6c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Thu6b"></label></td><td id="inputinfo4"><label id="Thu6d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Fri6a"></label></td><td id="inputinfo2"><label id="Fri6c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Fri6b"></label></td><td id="inputinfo4"><label id="Fri6d"></label></td></tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td id="PD"><label>7</label></td>
+					
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Mon7a"></label></td><td id="inputinfo2"><label id="Mon7c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Mon7b"></label></td><td id="inputinfo4"><label id="Mon7d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Tue7a"></label></td><td id="inputinfo2"><label id="Tue7c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Tue7b"></label></td><td id="inputinfo4"><label id="Tue7d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Wed7a"></label></td><td id="inputinfo2"><label id="Wed7c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Wed7b"></label></td><td id="inputinfo4"><label id="Wed7d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Thu7a"></label></td><td id="inputinfo2"><label id="Thu7c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Thu7b"></label></td><td id="inputinfo4"><label id="Thu7d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Fri7a"></label></td><td id="inputinfo2"><label id="Fri7c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Fri7b"></label></td><td id="inputinfo4"><label id="Fri7d"></label></td></tr>
+						</table>
+					</td>
+				</tr>
+				
+				<tr>
+					<td id="PD"><label>8</label></td>
+					
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Mon8a"></label></td><td id="inputinfo2"><label id="Mon8c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Mon8b"></label></td><td id="inputinfo4"><label id="Mon8d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Tue8a"></label></td><td id="inputinfo2"><label id="Tue8c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Tue8b"></label></td><td id="inputinfo4"><label id="Tue8d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Wed8a"></label></td><td id="inputinfo2"><label id="Wed8c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Wed8b"></label></td><td id="inputinfo4"><label id="Wed8d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Thu8a"></label></td><td id="inputinfo2"><label id="Thu8c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Thu8b"></label></td><td id="inputinfo4"><label id="Thu8d"></label></td></tr>
+						</table>
+					</td>
+					<td>
+						<table id="tableinput" style="width:100%">
+							<tr><td id="inputinfo"><label id="Fri8a"></label></td><td id="inputinfo2"><label id="Fri8c"></label></td></tr>
+							<tr><td id="inputinfo3"><label id="Fri8b"></label></td><td id="inputinfo4"><label id="Fri8d"></label></td></tr>
+						</table>
+					</td>
+				</tr>
+				
+			</table>
+		</div>
+	</body>
+</html>
+
+
+
+--------------------------------------------------------------------------------------------
+customize2.css
+
+body
+{
+	font-family: Times New Roman;
+	font-size: 127%;
+}
+
+td[id="nycdoe"],[id="GSwB"],[id="HHS"]
+{
+	text-align: center;
+}
+
+table,th,td
+{
+	margin: auto;
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+table,td[id="inputinfo"],[id="inputinfo2"],[id="inputinfo3"],[id="inputinfo4"]
+{
+	border:0px solid transparent;
+}
+
+td[id="inputinfo"],[id="inputinfo3"]
+{
+	text-align: left;
+}
+
+td[id="inputinfo2"],[id="inputinfo4"]
+{
+	text-align: right;
+}
+
+td[id = "PD"]
+{
+	text-align: center;
+}
+
+td[id = "image2"]
+{
+	text-align: right;
+}
+
+td[id="info"],[id="image"],[id="image2"],[id="nycdoe"],[id="GSwB"],[id="HHS"],[id="line"]
+{
+	border:none
+}
+--------------------------------------------------------------------------------------------
+
+schedule2.js
+
+window.addEventListener("load",AllInfo);
+
+function AllInfo()
+{
+	//Student Inofo
+	//School = localStorage.getItem("SCHOOL");
+	Year = localStorage.getItem("YEAR");
+	Term = localStorage.getItem("TERM");
+	FirstName = localStorage.getItem("FIRSTNAME");
+	LastName = localStorage.getItem("LASTNAME");
+	Id = localStorage.getItem("ID");
+	GradeLevel = localStorage.getItem("GRADELEVEL");
+	OfficialClass = localStorage.getItem("OFFICIALCLASS");
+	Counselor = localStorage.getItem("COUNSELOR");
+	OfficeRoom = localStorage.getItem("OFFICEROOM");
+	
+	//document.getElementById("schoolinfo").textContent = "School: " + School;
+	document.getElementById("yearinfo").textContent = "School Year: " + Year;
+	document.getElementById("terminfo").textContent = "Term Id: " + Term;
+	document.getElementById("nameinfo").textContent = "Name: " + FirstName + " " + LastName;
+	document.getElementById("gradeinfo").textContent = "Grade Level: " + GradeLevel;
+	document.getElementById("counselorinfo").textContent = "Counselor: " + Counselor;
+	document.getElementById("OSISinfo").textContent = "ID: " + Id;
+	document.getElementById("OfficialC").textContent = "Official Class: " + OfficialClass;
+	document.getElementById("OfficialR").textContent = "Office Room: " + OfficeRoom;
+	
+	//Class info
+	
+	Days = "Mon"+"Tue"+"Wed"+"Thu"+"Fri";
+	
+	ForLoop();
+	
+	CourseA = localStorage.getItem("COURSEA");
+	TeacherNameA = localStorage.getItem("TEACHERNAMEA");
+	RoomNumA = localStorage.getItem("ROOMNUMA");
+	DayA = localStorage.getItem("DAYA");
+	PeriodA = localStorage.getItem("PERIODA");
+	
+	DayA = parseInt(DayA);
+	switch(DayA)
+	{
+		case 1:
+			DayPeriod = "Mon" + PeriodA;
+			break;
+		case 2:
+			DayPeriod = "Tue" + PeriodA;
+			break;	
+		case 3:
+			DayPeriod = "Wed" + PeriodA;
+			break;
+		case 4:
+			DayPeriod = "Thu" + PeriodA;
+			break;
+		case 5:
+			DayPeriod = "Fri" + PeriodA;
+			break;
+	}
+	
+	DayPeriodA = DayPeriod + "a";
+	DayPeriodB = DayPeriod + "b";
+	DayPeriodC = DayPeriod + "c";
+	document.getElementById(DayPeriodA).textContent = CourseA;
+	document.getElementById(DayPeriodB).textContent = TeacherNameA;
+	document.getElementById(DayPeriodC).textContent = "Room: " + RoomNumA;;
+}
+	
+function ForLoop()
+{
+	let strat = 0, end = 3;
+	for(let i = 1; i <= 5; i++)
+	{
+		Day = Days.substring(strat,end);
+		for(let  p = 1; p <= 8; p++)
+				{
+					IdA = Day + p + "a";
+					IdB = Day + p + "b";
+					IdC = Day + p + "c";
+					IdD = Day + p + "d";
+					CourseId = "COURSE" + p;
+					TeacherNameId = "TEACHERNAME" + p;
+					RoomNumId = "ROOMNUM" + p;
+					STimeId = "STIME" + p;
+					ETimeId = "ETIME" + p;
+					document.getElementById(IdA).textContent = localStorage.getItem(CourseId);
+					document.getElementById(IdB).textContent = localStorage.getItem(TeacherNameId);
+					document.getElementById(IdC).textContent = "Room: " + localStorage.getItem(RoomNumId);
+					document.getElementById(IdD).textContent = localStorage.getItem(STimeId) + "-" + localStorage.getItem(ETimeId);
+				}
+		
+		strat = end;
+		end = end + 3;
+	}
+}	
