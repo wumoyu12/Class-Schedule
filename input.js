@@ -10,7 +10,7 @@ function addListener()
     document.getElementById("lastpart").style.display = "none";
     document.getElementById("btnstart").addEventListener("click", Start);
     document.getElementById("btnnext").addEventListener("click", Next);
-    document.getElementById("btnsubmit").addEventListener("click", GetClassInfo);
+    document.getElementById("btnsubmit").addEventListener("click", Period1);
 }
 
 function Start()
