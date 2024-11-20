@@ -30,7 +30,7 @@ function GetInfo()
     idnum = document.getElementById("txtid").value;
     idlength = idnum.length;
     grade = document.getElementById("txtgrade").value;
-    schoolyear = document.getElementById("txtid").value;
+    schoolyear = document.getElementById("txtyear").value;
     officeclass = document.getElementById("txtofficeclass").value;
     counselor = document.getElementById("txtcounselor").value;
     office = document.getElementById("txtoffice").value;
@@ -38,10 +38,9 @@ function GetInfo()
 }
 
 function CheckSInfo() {
-    if (firstname == "" || lastname == "" || grade == "" || officeclass == "" || counselor == "" || office == "" || idnum == "")
+    if (firstname == "" || lastname == "" || grade == "" || schoolyear == "" || officeclass == "" || counselor == "" || office == "" || idnum == "")
     {
         alert("Please fill out all the basic information fields before proceeding. If you already entered all information, then you might have entered an invalid ID number.");
-        document.getElementById("txtid").value = "";
         return;
     }
 
